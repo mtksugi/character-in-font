@@ -1,6 +1,6 @@
 # Character in font file
 
-True Typeフォントファイルに含まれる文字一覧を表示するアプリ。  
+True Typeフォントファイルに含まれる文字を一覧で表示するアプリ
 
 ## 仕様
 
