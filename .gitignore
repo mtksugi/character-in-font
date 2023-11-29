@@ -1,0 +1,7 @@
+.DS_Store
+node_modules
+/spa-app/public/data
+/spa-app/public/*.js*
+
+/tool/create-font-data/.venv
+/tool/create-font-data/output
