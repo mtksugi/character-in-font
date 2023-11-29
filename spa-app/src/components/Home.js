@@ -48,7 +48,6 @@ const Home = () => {
         return item
       }))
       setPage(0)
-      console.log('jsonData', jsonData[4], jsonData[4].character === '"');
 
     } catch (error) {
       console.log('Error fetching data: ', url, error);
