@@ -1,18 +1,3 @@
-/*
-https://learn.microsoft.com/ja-jp/typography/opentype/spec/name
-
-fullName: フルネーム: name-id: 1
-version: name-id: 5
-familyName: ファミリーネーム: : name-id: 16>1 日本語名と英語名を併記
-trademark: 商標: name-id: 7
-manufacturer: メーカー: name-id: 8
-designer: デザイナー: name-id: 9
-description: 説明: name-id: 10
-
-platform-id: 3, encoding-id: 1
-language-id: 1041(日本) > 1033(US) 0x411 0x409
-
-*/
 export const fonts = [
   {
     name: "MS ゴシック ver5.31",
