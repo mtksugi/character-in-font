@@ -10,8 +10,6 @@ import DownloadButton from './DownloadButton';
 import Pagination from './Pagination';
 import FontDetail from './FontDetail';
 import HistoryBoard from './HistoryBoard';
-import { json } from 'react-router-dom';
-
 
 const Home = () => {
   
