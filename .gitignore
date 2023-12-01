@@ -1,5 +1,7 @@
 .DS_Store
 node_modules
+.env
+
 /spa-app/public/data
 /spa-app/public/*.js*
 

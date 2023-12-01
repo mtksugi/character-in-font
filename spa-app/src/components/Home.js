@@ -36,7 +36,7 @@ const Home = () => {
   const fetchData = async (fontFileName) => {
     if (!fontFileName) return
 
-    const url = "/data/" + fontFileName;
+    const url = process.env.REACT_APP_DATA_URL + fontFileName;
     try {
       setIsLoading(true)
       const res = await fetch(url)
