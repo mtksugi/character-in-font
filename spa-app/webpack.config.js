@@ -2,8 +2,15 @@ const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv')
 
-module.exports = (env) => {
-  const denv = dotenv.config().parsed
+module.exports = (env, argv) => {
+
+  const envfile = '.env' + (argv.mode ? '.' + argv.mode: '')
+  const denv = dotenv.config({path: envfile}).parsed
+  // .envの中身を展開
+  const envKeys = Object.keys(denv).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(denv[next])
+    return prev
+  }, {})
 
   return {
     entry: './src/app.js',
@@ -11,7 +18,6 @@ module.exports = (env) => {
       path: path.join(__dirname, 'public'),
       filename: 'bundle.js',
     },
-    mode: 'development',
     module: {
       rules: [{
         test: /\.js$/,
@@ -31,10 +37,7 @@ module.exports = (env) => {
       }]
     },
     plugins: [
-      new webpack.DefinePlugin({
-        'process.env.REACT_APP_DATA_URL': JSON.stringify(denv.REACT_APP_DATA_URL),
-        'process.env.REACT_APP_CONTACT_FORM': JSON.stringify(denv.REACT_APP_CONTACT_FORM),
-      }),
+      new webpack.DefinePlugin(envKeys),
     ],
     // devtool: 'cheap-module-source-map'
     devServer: {
@@ -44,6 +47,9 @@ module.exports = (env) => {
       historyApiFallback: true,
       compress: true,
       port: 8080,
+    },
+    performance: {
+      maxEntrypointSize: 500000,
     },
   }
 };

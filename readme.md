@@ -2,7 +2,7 @@
 
 True Typeフォントファイルに含まれる文字を一覧で表示するアプリ
 
-## 仕様
+## Spec
 
 - フォントファイルに含まれる文字をテーブルで表示する
 - データはサーバの静的ファイル（json形式）を使用する
@@ -14,3 +14,24 @@ True Typeフォントファイルに含まれる文字を一覧で表示する�
 - フォントの追加を受け付ける
 - 問い合わせページはJetFormへのリンク
 
+## Usage
+
+- webpack devserver
+```
+npm run dev-server
+```
+
+- build for development
+```
+npm build:dev
+```
+
+- build for production
+```
+npm build:prod
+```
+
+- serve build（live-server）
+```
+npm serve
+```
