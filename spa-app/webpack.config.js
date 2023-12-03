@@ -18,6 +18,7 @@ module.exports = (env, argv) => {
       path: path.join(__dirname, 'public'),
       filename: 'bundle.js',
     },
+    // mode: argv.mode,
     module: {
       rules: [{
         test: /\.js$/,
@@ -49,6 +50,7 @@ module.exports = (env, argv) => {
       port: 8080,
     },
     performance: {
+      maxAssetSize: 500000,
       maxEntrypointSize: 500000,
     },
   }
