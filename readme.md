@@ -23,15 +23,15 @@ npm run dev-server
 
 - build for development
 ```
-npm build:dev
+npm run build:dev
 ```
 
 - build for production
 ```
-npm build:prod
+npm run build:prod
 ```
 
 - serve build（live-server）
 ```
-npm serve
+npm run serve
 ```
