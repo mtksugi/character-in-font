@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, CircularProgress } from '@mui/material';
 import { fonts, defaultFontFamily } from '../const/Fonts';
 
 import Board from './Board';
@@ -42,7 +42,7 @@ const Home = () => {
       const res = await fetch(url)
       const jsonData = await res.json()
       setData(jsonData.map((item) => {
-        item.hex = '0x' + item.code.toString(16).toUpperCase()
+        item.hex = '0x' + item.code.toString(16).toUpperCase().padStart(4, '0')
         return item
       }))
       setPage(0)
@@ -75,7 +75,13 @@ const Home = () => {
         </Grid>
       </Box>
 
-      { (data.length > 0) &&
+      { isLoading &&
+        <Grid container justifyContent="center" my={15}>
+          <CircularProgress/>
+        </Grid>
+      }
+
+      { (!isLoading && data.length > 0) &&
         <>
           <Box my={2}>
             <Grid container alignItems="center" spacing={1}>
